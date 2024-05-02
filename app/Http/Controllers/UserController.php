@@ -39,7 +39,29 @@ class UserController extends Controller
         return response()->json(['message' => 'User deleted successfully']);
     }
       
+
+
+
+
+    public function store(Request $request)
+    {
+        $validatedData = $request->validate([
+            'name' => 'required',
+            'email' => 'required',
+            'password' => 'required',
+        ]);
+
+        $user = User::create([
+            'name' => $validatedData['name'],
+            'email' => $validatedData['email'],
+            'password' => $validatedData['password'],
+        ]);
+
+        return response()->json($user, 201);
     }
+}
+
+    
 
 
 

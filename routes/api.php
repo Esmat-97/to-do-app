@@ -19,3 +19,5 @@ Route::delete('/tasks/{id}',[UserController:: class ,"destroy"]);
 Route::get('/users', [UserController:: class ,"show"] );
 Route::get('/users/{id}', [UserController:: class ,"detail"] );
 Route::delete('/users/{id}',[UserController:: class ,"destroy"]);
+Route::delete('/users/{id}',[UserController:: class ,"destroy"]);
+Route::post('/users',[UserController:: class ,"store"]);
