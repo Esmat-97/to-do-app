@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { IonicModule } from '@ionic/angular';
 import { FormsModule } from '@angular/forms';
+import { AuthService } from '../services/auth.service';
+
 
 @Component({
   selector: 'app-register',
@@ -9,11 +11,16 @@ import { FormsModule } from '@angular/forms';
   templateUrl: './register.page.html',
   styleUrls: ['./register.page.scss'],
 })
-export class RegisterPage implements OnInit {
+export class RegisterPage  {
 
-  constructor() { }
+  constructor(private http:AuthService) { }
 
-  ngOnInit() {
-  }
+formdata(main:any){
+console.log(main.value)
+this.http.register(main.value).subscribe(res=>{
+  
+})
+
+}
 
 }

@@ -15,18 +15,32 @@ import { TasksService } from '../services/tasks.service';
 
 export class HomePage {
 
-  tasks:any=[];
+  comming:any=[];
 
-  User_ID:any='6'
+
+  id:string='';
+
 
   constructor(private htp:TasksService) {}
 
+
+
+  /*    */
+
   ngOnInit(){
-    this.htp.gettasks().subscribe(res=>{
-this.tasks=res;
+this.id=localStorage.getItem('id')  as string ;
+    this.htp.gettasks(this.id).subscribe( (res :any) =>{
+      this.comming=res.tasks
+console.log(this.comming)
+
     })
+
   }
 
+
+  
+
+/*   */
 
   formdata(main:any){
 console.log(main.value)
@@ -34,4 +48,6 @@ this.htp.inserttasks(main.value).subscribe(res=>{
 
       })
   }
+
+
 }

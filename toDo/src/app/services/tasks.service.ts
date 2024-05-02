@@ -11,10 +11,18 @@ export class TasksService {
 
   constructor(private http:HttpClient) { }
 
-  gettasks() :Observable<any[]>{
-return this.http.get<any[]>(`${HOST_NAME}/api/tasks`)
+
+
+  gettasks(user_id:any) :Observable<any[]>{
+    console.log(`${user_id}`)
+return this.http.get<any[]>(`${HOST_NAME}/api/tasks/${user_id}`)
   }
 
+
+/*   */
+
+
+/*   */
 
 
   inserttasks(main:any) :Observable<any>{

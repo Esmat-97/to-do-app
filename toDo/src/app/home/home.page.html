@@ -22,7 +22,7 @@
     <ion-item>
       <form #main="ngForm" (ngSubmit)="formdata(main)" >
 <ion-input type="text" fill="solid"  name="description" #description="ngModel" ngModel></ion-input>
-<ion-input type="text" fill="solid"  [(ngModel)]="User_ID" name="user_id" ></ion-input>
+<input type="hidden" fill="solid"  [(ngModel)]="id" name="user_id" >
 <ion-button type="submit" fill="solid" >Add</ion-button>
       </form>
 
@@ -31,9 +31,8 @@
    
       <div class="row row-cols-1 row-cols-md-3 g-4">
 
-   
 
-        <div class="col" *ngFor="let x of tasks ; let i = index">
+        <div class="col" *ngFor="let x of comming; let i = index">
           <div class="card">
             <div class="card-body">
               <p class="card-text">{{x.description}}</p>
