@@ -19,6 +19,8 @@ class UserController extends Controller
     }
 
 
+    /*    */
+
     function detail($id){
         
         $task = User::find($id);
@@ -28,6 +30,9 @@ class UserController extends Controller
         return response()->json($task);
     }
 
+
+
+    /*   */
 
     public function destroy($id)
     {
@@ -41,7 +46,7 @@ class UserController extends Controller
       
 
 
-
+   /*   */
 
     public function store(Request $request)
     {
@@ -59,6 +64,8 @@ class UserController extends Controller
 
         return response()->json($user, 201);
     }
+
+    
 }
 
     

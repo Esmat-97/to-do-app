@@ -4,22 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TaskController;
 
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
 
-
-// Route::get('/', function () {
-//     return "hello students";
-// });
-
-// Route::get('/', function () {
-//     $students=['ali','mohamed','fatma'];
-//     return $students;
-// });
-
-
-Route::get('/array', [TaskController:: class ,"show"] );
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
@@ -29,3 +14,7 @@ Route::middleware([
         return view('dashboard');
     })->name('dashboard');
 });
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
