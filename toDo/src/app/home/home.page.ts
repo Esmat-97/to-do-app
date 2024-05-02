@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { IonicModule } from '@ionic/angular';
+import { TasksService } from '../services/tasks.service';
 
 @Component({
   selector: 'app-home',
@@ -13,21 +14,24 @@ import { IonicModule } from '@ionic/angular';
 
 
 export class HomePage {
-  tasklist: { task: string }[] = [];
 
-  text:string=" ";
+  tasks:any=[];
 
-  add(){
+  User_ID:any='6'
 
-this.tasklist.push({ task: this.text })
-this.text=" ";
+  constructor(private htp:TasksService) {}
+
+  ngOnInit(){
+    this.htp.gettasks().subscribe(res=>{
+this.tasks=res;
+    })
   }
 
 
-  del(index:number){
-this.tasklist.splice(index,1)
+  formdata(main:any){
+console.log(main.value)
+this.htp.inserttasks(main.value).subscribe(res=>{
+
+      })
   }
-
-  constructor() {}
-
 }
