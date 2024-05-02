@@ -19,4 +19,12 @@ class UserController extends Controller
     }
 
 
+    function detail($id){
+        
+        $task = User::find($id);
+        return $task;
+      
+    }
+
+
 }

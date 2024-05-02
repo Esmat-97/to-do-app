@@ -14,4 +14,7 @@ Route::get('/user', function (Request $request) {
 Route::get('/tasks', [TaskController:: class ,"show"] );
 Route::get('/tasks/{id}', [TaskController:: class ,"detail"] );
 
+
+
 Route::get('/users', [UserController:: class ,"show"] );
+Route::get('/users/{id}', [UserController:: class ,"detail"] );
