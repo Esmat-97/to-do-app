@@ -13,11 +13,15 @@ Route::get('/user', function (Request $request) {
 
 Route::get('/tasks', [TaskController:: class ,"show"] );
 Route::get('/tasks/{id}', [TaskController:: class ,"detail"] );
-Route::delete('/tasks/{id}',[UserController:: class ,"destroy"]);
+Route::delete('/tasks/{id}',[TaskController:: class ,"destroy"]);
+Route::post('/tasks',[TaskController:: class ,"store"]);
+
+
+
+
 
 
 Route::get('/users', [UserController:: class ,"show"] );
 Route::get('/users/{id}', [UserController:: class ,"detail"] );
-Route::delete('/users/{id}',[UserController:: class ,"destroy"]);
 Route::delete('/users/{id}',[UserController:: class ,"destroy"]);
 Route::post('/users',[UserController:: class ,"store"]);
