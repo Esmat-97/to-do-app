@@ -16,4 +16,12 @@ class TaskController extends Controller
         return $tasks;
       
     }
+
+
+    function detail($id){
+        
+        $task = Task::find($id);
+        return $task;
+      
+    }
 }
