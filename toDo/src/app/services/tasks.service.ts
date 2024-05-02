@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { HOST_NAME } from './constant';
 
+
 @Injectable({
   providedIn: 'root'
 })
@@ -14,9 +15,13 @@ export class TasksService {
 return this.http.get<any[]>(`${HOST_NAME}/api/tasks`)
   }
 
+
+
   inserttasks(main:any) :Observable<any>{
 console.log(main)
-
-    return this.http.post<any>(`${HOST_NAME}/api/tasks`,main)
+ return this.http.post<any>(`${HOST_NAME}/api/tasks`,main)
       }
+
+
+
 }

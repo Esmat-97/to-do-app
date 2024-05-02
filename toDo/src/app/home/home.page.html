@@ -13,7 +13,7 @@
 
   <ion-grid>  
     <ion-row >  
-      <ion-col size="5" id="a" >
+      <ion-col size="10" id="a" >
 
 
   <ion-list>
@@ -24,15 +24,15 @@
 <ion-input type="text" fill="solid"  name="description" #description="ngModel" ngModel></ion-input>
 <ion-input type="text" fill="solid"  [(ngModel)]="User_ID" name="user_id" ></ion-input>
 <ion-button type="submit" fill="solid" >Add</ion-button>
-
       </form>
 
    </ion-item >
          
-
-
    
       <div class="row row-cols-1 row-cols-md-3 g-4">
+
+   
+
         <div class="col" *ngFor="let x of tasks ; let i = index">
           <div class="card">
             <div class="card-body">
@@ -40,14 +40,12 @@
             </div>
           </div>
         </div>
+  
+
       </div>
 
 
-
-
 </ion-list>
-
-
 
 </ion-col>
 </ion-row>  
