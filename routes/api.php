@@ -18,3 +18,4 @@ Route::get('/tasks/{id}', [TaskController:: class ,"detail"] );
 
 Route::get('/users', [UserController:: class ,"show"] );
 Route::get('/users/{id}', [UserController:: class ,"detail"] );
+Route::delete('/users/{id}',[UserController:: class ,"destroy"]);

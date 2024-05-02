@@ -14,7 +14,7 @@ class UserController extends Controller
     function show(){
         
         $tasks = User::all();
-        return $tasks;
+        return response()->json($tasks);
       
     }
 
@@ -22,9 +22,24 @@ class UserController extends Controller
     function detail($id){
         
         $task = User::find($id);
-        return $task;
+        if (!$task) {
+            return response()->json(['message' => 'User not found'], 404);
+        }
+        return response()->json($task);
+    }
+
+
+    public function destroy($id)
+    {
+        $user = User::find($id);
+        if (!$user) {
+            return response()->json(['message' => 'User not found'], 404);
+        }
+        $user->delete();
+        return response()->json(['message' => 'User deleted successfully']);
+    }
       
     }
 
 
-}
+
