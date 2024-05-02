@@ -13,7 +13,7 @@ Route::get('/user', function (Request $request) {
 
 Route::get('/tasks', [TaskController:: class ,"show"] );
 Route::get('/tasks/{id}', [TaskController:: class ,"detail"] );
-
+Route::delete('/tasks/{id}',[UserController:: class ,"destroy"]);
 
 
 Route::get('/users', [UserController:: class ,"show"] );

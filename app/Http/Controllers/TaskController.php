@@ -24,4 +24,15 @@ class TaskController extends Controller
         return $task;
       
     }
+
+
+    public function destroy($id)
+    {
+        $user = Task::find($id);
+        if (!$user) {
+            return response()->json(['message' => 'Task not found'], 404);
+        }
+        $user->delete();
+        return response()->json(['message' => 'Task deleted successfully']);
+    }
 }
