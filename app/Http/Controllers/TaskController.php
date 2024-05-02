@@ -18,12 +18,17 @@ class TaskController extends Controller
     }
 
 
-    function detail($id){
+    public function detail($user_id)
+    {
+        // Retrieve tasks associated with the specified user_id
+        $tasks = Task::where('user_id', $user_id)->get();
         
-        $task = Task::find($id);
-        return $task;
-      
+        // Return a response, typically in JSON format
+        return response()->json(['tasks' => $tasks]);
     }
+
+
+    
 
 
     public function destroy($id)
