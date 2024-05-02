@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TaskController;
+use App\Http\Controllers\UserController;
 
 
 Route::get('/user', function (Request $request) {
@@ -10,4 +11,6 @@ Route::get('/user', function (Request $request) {
 })->middleware('auth:sanctum');
 
 
-Route::get('/array', [TaskController:: class ,"show"] );
+Route::get('/tasks', [TaskController:: class ,"show"] );
+
+Route::get('/users', [UserController:: class ,"show"] );
