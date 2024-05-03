@@ -28,6 +28,8 @@
 
    </ion-item >
          
+   <br>
+   <br>
    
       <div class="row row-cols-1 row-cols-md-3 g-4">
 
@@ -35,7 +37,11 @@
         <div class="col" *ngFor="let x of comming; let i = index">
           <div class="card">
             <div class="card-body">
-              <p class="card-text">{{x.description}}</p>
+              <span class="card-text">{{x.description}}</span>
+              <ion-button  fill="solid" (click)="del(x.id)" >delete</ion-button>
+
+
+
             </div>
           </div>
         </div>

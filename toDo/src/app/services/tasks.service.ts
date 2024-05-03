@@ -21,6 +21,12 @@ return this.http.get<any[]>(`${HOST_NAME}/api/tasks/${user_id}`)
 
 /*   */
 
+deltasks(id:any) :Observable<any>{
+  console.log(id)
+return this.http.delete<any>(`${HOST_NAME}/api/tasks/${id}`)
+}
+
+
 
 /*   */
 

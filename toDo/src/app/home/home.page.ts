@@ -4,6 +4,8 @@ import { CommonModule } from '@angular/common';
 import { IonicModule } from '@ionic/angular';
 import { TasksService } from '../services/tasks.service';
 
+
+
 @Component({
   selector: 'app-home',
   standalone:true,
@@ -38,7 +40,16 @@ console.log(this.comming)
   }
 
 
-  
+  /*   */
+
+  del(id:any){
+this.htp.deltasks(id).subscribe(res=>{
+
+})
+  }
+
+
+
 
 /*   */
 
