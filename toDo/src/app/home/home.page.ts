@@ -21,7 +21,7 @@ export class HomePage {
 
 
   id:string='';
-
+  name:string='';
 
   constructor(private htp:TasksService) {}
 
@@ -31,6 +31,7 @@ export class HomePage {
 
   ngOnInit(){
 this.id=localStorage.getItem('id')  as string ;
+this.name=localStorage.getItem('name')  as string ;
     this.htp.gettasks(this.id).subscribe( (res :any) =>{
       this.comming=res.tasks
 console.log(this.comming)

@@ -1,10 +1,10 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>
-      Blank
+      Hello {{name}}
     </ion-title>
-    <ion-buttons slot="end">
-      <ion-button routerLink="/Logout">
+    <ion-buttons slot="end" >
+      <ion-button  routerLink="/logout">
         Logout
       </ion-button>
     </ion-buttons>
@@ -34,7 +34,7 @@
           <div class="card">
             <div class="card-body">
               <span class="card-text">{{x.description}}</span>
-              <ion-button  fill="solid" (click)="del(x.id)" >delete</ion-button>
+              <ion-button  fill="solid" (click)="del(x.id)" ><ion-icon name="trash-outline"></ion-icon></ion-button>
 
 
 
