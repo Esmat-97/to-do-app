@@ -3,13 +3,13 @@ import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { IonicModule } from '@ionic/angular';
 import { TasksService } from '../services/tasks.service';
-
+import { RouterLink } from '@angular/router';
 
 
 @Component({
   selector: 'app-home',
   standalone:true,
-  imports:[FormsModule,CommonModule,IonicModule],
+  imports:[FormsModule,CommonModule,IonicModule,RouterLink],
   templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss'],
 })

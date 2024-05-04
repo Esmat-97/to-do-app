@@ -3,37 +3,33 @@
     <ion-title>
       Blank
     </ion-title>
+    <ion-buttons slot="end">
+      <ion-button routerLink="/Logout">
+        Logout
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 
 
-<ion-content>
 
 
-  <ion-grid>  
-    <ion-row >  
-      <ion-col size="10" id="a" >
+<body>
+  <h1>To-Do List</h1>
+  <div class="container">
+      <div class="input_div">
 
+        <form #main="ngForm" (ngSubmit)="formdata(main)" >
+          <input type="text" class="input" placeholder="Add new item"  name="description" #description="ngModel" ngModel>
+          <input type="hidden"  [(ngModel)]="id" name="user_id" >
 
-  <ion-list>
-
-
-    <ion-item>
-      <form #main="ngForm" (ngSubmit)="formdata(main)" >
-<ion-input type="text" fill="solid"  name="description" #description="ngModel" ngModel></ion-input>
-<input type="hidden" fill="solid"  [(ngModel)]="id" name="user_id" >
-<ion-button type="submit" fill="solid" >Add</ion-button>
-      </form>
-
-   </ion-item >
-         
-   <br>
-   <br>
-   
-      <div class="row row-cols-1 row-cols-md-3 g-4">
-
-
+          <button class="addButton" type="submit" >+</button>
+                </form>
+  
+      </div>
+      <div class="item_list">
+        
         <div class="col" *ngFor="let x of comming; let i = index">
           <div class="card">
             <div class="card-body">
@@ -48,13 +44,8 @@
   
 
       </div>
+      </div>
+  
 
 
-</ion-list>
-
-</ion-col>
-</ion-row>  
-</ion-grid>  
-   
-
-</ion-content>
+</body>
