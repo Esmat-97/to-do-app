@@ -22,5 +22,10 @@ $ npm install -g ionic
 $ ionic start myIonicApp blank 
 $ cd myIonicApp
 $ ionic serve
+```
+
+# Demo
+
+![photo_2024-05-05_20-06-46](https://github.com/Esmat-97/to-do-app/assets/158211063/7585605d-b4c8-47d9-b917-4f86c22d3fc9)
 
 
